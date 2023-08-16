@@ -1,12 +1,13 @@
 package com.example;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Random;
 
 public class RandomE {
-    
+	
 	//1. list에 1-100까지의 숫자가 모두 들어가는 코드 (중복 o, 몇번 반복했는지 확인 ) 
-	public static void main(String[] args) {
+	public static void main2(String[] args) {
 		var list = new ArrayList<Integer>();
 		Random r = new Random();
 
@@ -18,8 +19,7 @@ public class RandomE {
 		    boolean b= true;
 			for(int j =1;j<=100;j++) {
 				if (!list.contains(j)) {
-					b=false;
-					
+					b=false;				
 				} 
 		}if (b) {
 			break;
@@ -27,14 +27,7 @@ public class RandomE {
 			}
 		
 		System.out.println(list);	
-		System.out.println(list.size());
-		
-		
-		
-		
-		
-		    
-		    
+		System.out.println(list.size());										    		    
 		
 	}	 
 		    
@@ -45,7 +38,24 @@ public class RandomE {
 	
 	//2. list에 1-100까지 모두 들어가는데, 중복x
 	//리스트 정렬까지 (sort(익명구현객체))
-	public static void main2(String[] args) {
+	public static void main(String[] args) {
+		
+		var list = new ArrayList<Integer>();
+		Random r = new Random();
+
+		
+		int n =r.nextInt(1,11);
+		
+		list.sort(new Comparator<Integer>() {
+
+			
+
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				// TODO Auto-generated method stub
+				return 0;
+			}
+		});
 		
 	}
 
