@@ -44,18 +44,30 @@ public class RandomE {
 		Random r = new Random();
 
 		
-		int n =r.nextInt(1,11);
+		for(;;) {
+			
+			int r2 = r.nextInt(1,101);
+			
+			if(!list.contains(r2)) {
+				
+				list.add(r2);
+			}
+		
+			
 		
 		list.sort(new Comparator<Integer>() {
-
-			
-
 			@Override
-			public int compare(Integer o1, Integer o2) {
-				// TODO Auto-generated method stub
-				return 0;
+			public int compare(Integer a, Integer b) {
+				return a.compareTo(b);
 			}
 		});
+		
+		if(list.size()==100) {
+			break;
+		}
+		
+		}
+		System.out.println(list);
 		
 	}
 
